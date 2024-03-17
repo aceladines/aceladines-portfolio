@@ -1,12 +1,13 @@
 import Image from "next/image";
 import { FaFileAlt } from "react-icons/fa";
 import { AiOutlineMessage } from "react-icons/ai";
+import skills from "@/data/skills";
 
 export default function Home() {
   return (
     <>
       <div id="home" className="h-screen py-10">
-        <div className="flex flex-col items-center space-y-4">
+        <div className="flex flex-col items-center">
           <div className="relative w-[300px] rounded-full overflow-hidden aspect-square">
             <Image
               src={"/Header-Profile.jpg"}
@@ -17,7 +18,7 @@ export default function Home() {
               alt="Profile"
             />
           </div>
-          <div className="flex flex-col items-center w-80">
+          <div className="flex flex-col items-center w-80 py-7">
             <h1 className="text-5xl font-medium">Ace Ladines</h1>
             <p className="text-lg">Aspiring Software Engineer</p>
             <p className="text-justify mt-5 text-sm">
@@ -51,11 +52,22 @@ export default function Home() {
           </button>
         </div>
       </div>
-      <div id="skills" className=" h-screen">
-        <h1>Skills</h1>
+      <div id="skills" className=" h-fit px-10">
+        <h1 className="text-4xl font-bold">Skills.</h1>
+        <div className="flex flex-row flex-wrap gap-6 py-7">
+          {skills.map((_, index) => (
+            <div
+              key={index}
+              className="bg-gray-200 rounded-lg flex flex-col items-center w-24 aspect-square justify-center"
+            >
+              <_.techImage size={30} />
+              <p className="pt-2">{_.techName}</p>
+            </div>
+          ))}
+        </div>
       </div>
       <div id="contact" className=" h-screen">
-        Contact
+        Contactz
       </div>
     </>
   );
