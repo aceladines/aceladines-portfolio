@@ -33,10 +33,10 @@ export default function NavBar() {
       >
         <h1 className="uppercase font-bold sm:text-sm">ace.dev</h1>
         <ul className="flex-row justify-around items-center hidden md:flex">
-          {NavBarData.map((menu_item) => (
-            <li key={menu_item.text}>
-              <Link href={menu_item.href} className="hover:text-blue-300">
-                {menu_item.text}
+          {NavBarData.map((_, index) => (
+            <li key={index}>
+              <Link href={_.href} className="hover:text-blue-300">
+                {_.text}
               </Link>
             </li>
           ))}
