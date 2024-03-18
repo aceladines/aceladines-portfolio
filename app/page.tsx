@@ -4,7 +4,11 @@ import { AiOutlineMessage } from "react-icons/ai";
 import skills from "@/data/skills";
 import contact from "@/data/contact";
 
-export default function Home() {
+type SearchParamProps = {
+  searchParams: Record<string, string> | null | undefined;
+};
+
+export default function Home({ searchParams }: SearchParamProps) {
   return (
     <div className="px-10">
       <section id="home" className="h-screen py-4">
@@ -16,6 +20,7 @@ export default function Home() {
               style={{ objectFit: "cover" }}
               quality={99}
               priority={true}
+              sizes="(min-width: 768px) 300px, 100vw"
               alt="Profile"
             />
           </div>
@@ -72,7 +77,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="skills" className=" h-fit py-4 mb-7">
+      <section id="skills" className=" h-fit py-4 mb-16">
         <h1 className="text-4xl font-bold">
           Skills<span className="text-blue-700">.</span>
         </h1>
@@ -90,7 +95,28 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="education" className="h-fit mb-14">
+      <section id="projects" className="h-fit mb-16">
+        <h1 className="text-4xl font-bold">
+          Projects<span className="text-blue-700">.</span>
+        </h1>
+        <ul className="flex flex-col my-7 gap-6">
+          {[...Array(3)].fill("").map((_, index) => (
+            <>
+              <li key={index} className="w-full flex flex-col">
+                <div className="bg-gray-300 h-56 rounded-lg mb-2">
+                  {/* Image will be here */}
+                </div>
+                <h1 className="font-bold text-lg">Project title</h1>
+                <p className="font-light text-sm truncate ...">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                </p>
+              </li>
+            </>
+          ))}
+        </ul>
+      </section>
+
+      <section id="education" className="h-fit mb-16">
         <h1 className="text-4xl font-bold mb-10">
           Education<span className="text-blue-700">.</span>
         </h1>
@@ -106,7 +132,7 @@ export default function Home() {
               />
             </div>
             <div className="flex flex-col w-full">
-              <h1 className="font-bold text-md">BS. Computer Science</h1>
+              <h1 className="font-semibold text-md">BS. Computer Science</h1>
               <p className="text-sm font-medium text-gray-500">
                 2020 - Present
               </p>
@@ -126,7 +152,7 @@ export default function Home() {
               />
             </div>
             <div className="flex flex-col w-full">
-              <h1 className="font-bold text-md">
+              <h1 className="font-semibold text-md">
                 Information Communication Technology
               </h1>
               <p className="text-sm font-medium text-gray-500">2018 - 2020</p>
@@ -145,13 +171,23 @@ export default function Home() {
         <ul className="flex flex-col gap-6">
           {contact.map((_, index) => (
             <li key={index} className="flex gap-4">
-              <span className="bg-black w-20 h-20 rounded-full"></span>
+              <div className="relative w-12 aspect-square overflow-hidden">
+                <Image
+                  src={_.contactImage}
+                  fill
+                  style={{ objectFit: "contain" }}
+                  sizes="(min-width: 768px) 300px, 100vw"
+                  alt="plm-logo"
+                />
+              </div>
               <article className="flex flex-col">
                 <h1 className="font-light text-gray-600 text-sm">
                   {_.contactType}
                 </h1>
                 <p className="font-bold text-gray-700 text-mg">
-                  <a href={_.contactLink}>{_.contact}</a>
+                  <a href={_.contactLink} className="hover:underline">
+                    {_.contact}
+                  </a>
                 </p>
               </article>
             </li>
