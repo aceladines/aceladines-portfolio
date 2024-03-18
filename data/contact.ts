@@ -1,21 +1,22 @@
 const contact = [
   {
-    contactImage: "",
+    contactImage: "/email.png",
     contactType: "Email",
     contact: "ajladines01@gmail.com",
-    contactLink: "",
+    contactLink: "mailto:ajladines01@gmail.com",
   },
   {
-    contactImage: "",
+    contactImage: "/github.png",
     contactType: "Github",
     contact: "aceladines",
-    contactLink: "",
+    contactLink: "https://github.com/aceladines",
   },
   {
-    contactImage: "",
+    contactImage: "/linkedin.png",
     contactType: "LinkedIn",
     contact: "Acemon Jassene Ladines",
-    contactLink: "",
+    contactLink:
+      "https://www.linkedin.com/in/acemon-jassene-ladines-71968a258/",
   },
 ];
 
