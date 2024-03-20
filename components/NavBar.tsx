@@ -31,11 +31,14 @@ export default function NavBar() {
           visible ? "opacity-100" : "opacity-0 -top-full"
         }`}
       >
-        <h1 className="uppercase font-bold sm:text-sm">ace.dev</h1>
-        <ul className="flex-row justify-around items-center hidden md:flex">
+        <h1 className="uppercase font-bold text-sm lg:text-xl">ace.dev</h1>
+        <ul className="flex-row justify-around items-center hidden gap-4 md:flex">
           {NavBarData.map((_, index) => (
             <li key={index}>
-              <Link href={_.href} className="hover:text-blue-300">
+              <Link
+                href={_.href}
+                className="hover:text-blue-300 font-medium lg:text-lg"
+              >
                 {_.text}
               </Link>
             </li>
