@@ -1,83 +1,76 @@
+"use server";
 import Image from "next/image";
-import { FaFileAlt } from "react-icons/fa";
-import { AiOutlineMessage } from "react-icons/ai";
+
 import skills from "@/data/skills";
 import contact from "@/data/contact";
+import projects from "@/data/projects";
+
+import MainButtons from "@/components/MainButtons";
 
 type SearchParamProps = {
   searchParams: Record<string, string> | null | undefined;
 };
 
-export default function Home({ searchParams }: SearchParamProps) {
+export default async function Home({ searchParams }: SearchParamProps) {
   return (
-    <div className="px-10">
-      <section id="home" className="h-screen py-4">
-        <div className="flex flex-col items-center mb-10">
-          <div className="relative w-[300px] rounded-full overflow-hidden aspect-square mb-3">
-            <Image
-              src={"/Header-Profile.jpg"}
-              fill
-              style={{ objectFit: "cover" }}
-              quality={99}
-              priority={true}
-              sizes="(min-width: 768px) 300px, 100vw"
-              alt="Profile"
-            />
+    <div className="w-[calc(100vw-3rem)] mx-auto sm:w-[93vw] md:w-[90vw] lg:w-[900px]">
+      <section
+        id="home"
+        className="h-[calc(100dvh-4rem)] sm:min-h-[750px] mb-32"
+      >
+        <div className="flex flex-col justify-center h-full">
+          <div className="flex flex-col items-center mb-10 lg:flex-row lg: gap-x-12">
+            <div className="relative w-[300px] rounded-full overflow-hidden aspect-square mb-3 md:w-[400px] lg:w-[550px] lg:mb-7">
+              <Image
+                src={"/Header-Profile.jpg"}
+                fill
+                style={{ objectFit: "cover" }}
+                quality={99}
+                priority={true}
+                sizes="(min-width: 768px) 300px, 100vw"
+                alt="Profile"
+              />
+            </div>
+            <div className="flex flex-col items-center w-80 lg:w-2/3">
+              <h1 className="text-5xl font-medium lg:text-7xl">Ace Ladines</h1>
+              <p className="text-lg mb-9 lg:text-2xl font-light">
+                Aspiring Software Engineer
+              </p>
+              <p className="text-center text-sm leading-relaxed lg:text-xl">
+                <span className="font-bold text-blue-700">Hello World!</span>{" "}
+                This caffeine-fueled CS student is a full-stack developer in
+                training! Backends are my jam for now, but I'm always learning
+                and expanding my skillset. Let's build something awesome
+                together!
+              </p>
+            </div>
           </div>
-          <div className="flex flex-col items-center w-80 ">
-            <h1 className="text-5xl font-medium">Ace Ladines</h1>
-            <p className="text-lg mb-9">Aspiring Software Engineer</p>
-            <p className="text-center text-sm leading-relaxed">
-              <span className="font-bold text-blue-700">Hello World!</span> This
-              caffeine-fueled CS student is a full-stack developer in training!
-              Backends are my jam for now, but I'm always learning and expanding
-              my skillset. Let's build something awesome together!
-            </p>
-          </div>
-        </div>
 
-        <ul className="flex justify-center items-center gap-6 mb-10">
-          <li className="flex flex-col items-center gap-2">
-            <span className="bg-[#0001] px-4 py-1 rounded-2xl font-bold text-gray-500">
-              2.5+
-            </span>
-            <span className="text-xs text-center text-gray-700">
-              Years <br />
-              of experience
-            </span>
-          </li>
-          <span className="border-r border-dashed border-gray-400 h-8"></span>
-          <li className="flex flex-col items-center gap-2">
-            <span className="bg-[#0001] px-4 py-1 rounded-2xl font-bold text-gray-500">
-              2k+
-            </span>
-            <span className="text-xs text-center text-gray-700">
-              Coffee <br /> consumed
-            </span>
-          </li>
-        </ul>
-
-        <div className="flex flex-row justify-around w-80 mx-auto gap-1">
-          <button
-            type="button"
-            className="flex items-center gap-2 text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full 
-            px-8 py-3 text-center text-lg me-2 mb-2"
-          >
-            <FaFileAlt />
-            <span>Resume</span>
-          </button>
-          <button
-            type="button"
-            className="flex items-center gap-2 py-3 px-8 me-2 mb-2 text-lg font-medium text-black bg-gray-100 focus:outline-none rounded-full border border-gray-200 
-            hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 "
-          >
-            <AiOutlineMessage size={25} />
-            <span>Contact</span>
-          </button>
+          <ul className="flex justify-center items-center gap-6 mb-10 md:mb-14">
+            <li className="flex flex-col items-center gap-2">
+              <span className="bg-[#0001] px-4 py-1 rounded-2xl font-bold text-gray-500 lg:text-xl">
+                2.5+
+              </span>
+              <span className="text-xs text-center text-gray-700 lg:text-md">
+                Years <br />
+                of experience
+              </span>
+            </li>
+            <span className="border-r border-dashed border-gray-400 h-8"></span>
+            <li className="flex flex-col items-center gap-2">
+              <span className="bg-[#0001] px-4 py-1 rounded-2xl font-bold text-gray-500 lg:text-xl">
+                2k+
+              </span>
+              <span className="text-xs text-center text-gray-700 lg:text-md">
+                Coffee <br /> consumed
+              </span>
+            </li>
+          </ul>
+          <MainButtons />
         </div>
       </section>
 
-      <section id="skills" className=" h-fit py-4 mb-16">
+      <section id="skills" className=" h-fit mb-32">
         <h1 className="text-4xl font-bold">
           Skills<span className="text-blue-700">.</span>
         </h1>
@@ -95,32 +88,42 @@ export default function Home({ searchParams }: SearchParamProps) {
         </div>
       </section>
 
-      <section id="projects" className="h-fit mb-16">
-        <h1 className="text-4xl font-bold">
+      <section id="projects" className="h-fit mb-32">
+        <h1 className="text-4xl font-bold mb-7">
           Projects<span className="text-blue-700">.</span>
         </h1>
-        <ul className="flex flex-col my-7 gap-6">
-          {[...Array(3)].fill("").map((_, index) => (
-            <>
-              <li key={index} className="w-full flex flex-col">
-                <div className="bg-gray-300 h-56 rounded-lg mb-2">
-                  {/* Image will be here */}
+        <div className="grid grid-cols-1 gap-x-7 gap-y-12 sm:grid-cols-2 md:gap-x-12 md:gap-y-12 sm:gap-x-6 sm:gap-y-12">
+          {projects.map((_, index) => (
+            <div key={index} className="flex flex-col w-full">
+              <div className="bg-blue-500 aspect-square h-56 px-5 py-8 rounded-2xl mb-2 overflow-hidden">
+                <div className="relative h-full hover:scale-110 transition duration-500 cursor-pointer rounded-lg overflow-hidden">
+                  <Image
+                    src={_.image}
+                    fill
+                    style={{ objectFit: "cover" }}
+                    quality={99}
+                    priority={true}
+                    sizes="(min-width: 768px) 300px, 100vw"
+                    alt="Project"
+                  />
                 </div>
-                <h1 className="font-bold text-lg">Project title</h1>
-                <p className="font-light text-sm truncate ...">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                </p>
-              </li>
-            </>
+              </div>
+              <h1 className="font-bold text-lg truncate ...">
+                {_.projectTitle}
+              </h1>
+              <p className="font-light text-sm truncate ...">
+                {_.projectDetail}
+              </p>
+            </div>
           ))}
-        </ul>
+        </div>
       </section>
 
-      <section id="education" className="h-fit mb-16">
+      <section id="education" className="h-fit mb-32">
         <h1 className="text-4xl font-bold mb-10">
           Education<span className="text-blue-700">.</span>
         </h1>
-        <div className="grid gap-10">
+        <div className="grid gap-10 md:grid-cols-2">
           <article className="flex gap-4 items-center">
             <div className="relative w-36 aspect-square overflow-hidden">
               <Image
@@ -164,11 +167,11 @@ export default function Home({ searchParams }: SearchParamProps) {
         </div>
       </section>
 
-      <section id="contact" className="mb-10">
+      <section id="contact" className="mb-32">
         <h1 className="text-4xl font-bold mb-10">
           Contact<span className="text-blue-700">.</span>
         </h1>
-        <ul className="flex flex-col gap-6">
+        <ul className="grid gap-12 md:grid-cols-2">
           {contact.map((_, index) => (
             <li key={index} className="flex gap-4">
               <div className="relative w-12 aspect-square overflow-hidden">
