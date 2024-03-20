@@ -39,9 +39,9 @@ export default async function Home({ searchParams }: SearchParamProps) {
               <p className="text-center text-sm leading-relaxed lg:text-xl">
                 <span className="font-bold text-blue-700">Hello World!</span>{" "}
                 This caffeine-fueled CS student is a full-stack developer in
-                training! Backends are my jam for now, but I'm always learning
-                and expanding my skillset. Let's build something awesome
-                together!
+                training! Backends are my jam for now, but I&apos;m always
+                learning and expanding my skillset. Let&apos;s build something
+                awesome together!
               </p>
             </div>
           </div>
