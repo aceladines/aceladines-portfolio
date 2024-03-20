@@ -14,10 +14,7 @@ type SearchParamProps = {
 export default async function Home({ searchParams }: SearchParamProps) {
   return (
     <div className="w-[calc(100vw-3rem)] mx-auto sm:w-[93vw] md:w-[90vw] lg:w-[900px]">
-      <section
-        id="home"
-        className="h-[calc(100dvh-4rem)] sm:min-h-[750px] mb-32"
-      >
+      <section id="home" className="h-[calc(100dvh-4rem)] min-h-[750px] mb-32">
         <div className="flex flex-col justify-center h-full">
           <div className="flex flex-col items-center mb-10 lg:flex-row lg: gap-x-12">
             <div className="relative w-[300px] rounded-full overflow-hidden aspect-square mb-3 md:w-[400px] lg:w-[550px] lg:mb-7">
