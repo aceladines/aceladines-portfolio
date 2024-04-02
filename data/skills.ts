@@ -9,6 +9,7 @@ import {
 import { FaNodeJs, FaJava, FaGitAlt } from "react-icons/fa";
 import { BiLogoSpringBoot } from "react-icons/bi";
 import { TbFileTypeSql } from "react-icons/tb";
+import { MdDataObject } from "react-icons/md";
 
 const skills = [
   {
@@ -54,6 +55,10 @@ const skills = [
   {
     techImage: SiTailwindcss,
     techName: "Tailwind",
+  },
+  {
+    techImage: MdDataObject,
+    techName: "Orm's",
   },
 ];
 
