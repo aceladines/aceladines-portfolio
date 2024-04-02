@@ -26,8 +26,11 @@ export default function NavBar() {
   });
   return (
     <>
+      <div className="text-center text-sm font-bold text-gray-50 bg-blue-400 uppercase w-full">
+        Ongoing project
+      </div>
       <div
-        className={`transition-opacity duration-700 ease-in-out flex flex-row justify-between content-center py-4 sticky top-0 bg-white/15 px-20 backdrop-blur-sm z-10 ${
+        className={`transition-opacity duration-700 ease-in-out flex flex-row justify-between content-center py-4 sticky top-0 bg-white/15 px-20 backdrop-blur-sm w-full z-10 ${
           visible ? "opacity-100" : "opacity-0 -top-full"
         }`}
       >
