@@ -9,7 +9,7 @@ import { AiOutlineMessage } from "react-icons/ai";
 export default function MainButtons() {
   const router = useRouter();
   return (
-    <div className="flex flex-row justify-center gap-x-4">
+    <div className="flex flex-row justify-center gap-x-2 md:gap-x-4">
       <Link href={"/Resume.pdf"} rel="noopener noreferrer" target="_blank">
         <div
           className="flex items-center gap-2 text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full 

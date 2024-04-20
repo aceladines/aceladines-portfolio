@@ -1,5 +1,6 @@
 "use server";
 import Image from "next/image";
+import Link from "next/link";
 
 import skills from "@/data/skills";
 import contact from "@/data/contact";
@@ -7,16 +8,14 @@ import projects from "@/data/projects";
 
 import MainButtons from "@/components/MainButtons";
 
-type SearchParamProps = {
-  searchParams: Record<string, string> | null | undefined;
-};
+import { ExternalLink } from "lucide-react";
 
-export default async function Home({ searchParams }: SearchParamProps) {
+export default async function Home() {
   return (
-    <div className="w-[calc(100vw-3rem)] mx-auto sm:w-[93vw] md:w-[90vw] lg:w-[900px]">
+    <div className="w-[calc(100vw-4rem)] mx-auto md:w-[90vw] lg:w-[900px]">
       <section
         id="home"
-        className="h-[calc(100vh-5rem)] min-h-[750px] lg:min-h-0 mb-32"
+        className="h-[calc(100vh-5rem)] min-h-[750px] md:min-h-[900px] mb-32"
       >
         <div className="flex flex-col justify-center h-full">
           <div className="flex flex-col items-center mb-10 lg:flex-row lg: gap-x-12">
@@ -108,12 +107,13 @@ export default async function Home({ searchParams }: SearchParamProps) {
                   />
                 </div>
               </div>
-              <h1 className="font-bold text-lg truncate ...">
-                {_.projectTitle}
-              </h1>
-              <p className="font-light text-sm truncate ...">
-                {_.projectDetail}
-              </p>
+              <div className="flex justify-between">
+                <h1 className="font-bold text-lg">{_.projectTitle}</h1>
+                <Link href={_.link} target="_blank" rel="noopener noreferrer">
+                  <ExternalLink />
+                </Link>
+              </div>
+              <p className="font-light text-sm">{_.projectDetail}</p>
             </div>
           ))}
         </div>
