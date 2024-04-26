@@ -57,11 +57,11 @@ export default function NavBar() {
             navVisible ? "" : "hidden"
           } w-full md:w-auto md:block m:w-auto relative transition-opacity duration-700 ease-in-out`}
         >
-          <ul className="absolute flex flex-col space-y-2 right-0 bg-gray-200 rounded-lg mt-5 p-3 md:mt-0 md:p-0 md:bg-white md:static md:flex md:flex-row md:space-x-4 md:space-y-0">
+          <ul className="absolute flex flex-col space-y-2 right-0 bg-gray-200 rounded-lg mt-5 p-3 md:mt-0 md:p-0 md:bg-transparent md:static md:flex md:flex-row md:space-x-4 md:space-y-0">
             {NavBarData.map((_, index) => (
               <li
                 key={index}
-                className="bg-white p-2 rounded-lg w-36 md:p-0 md:w-auto"
+                className="bg-white md:bg-transparent p-2 rounded-lg w-36 md:p-0 md:w-auto"
               >
                 <Link
                   href={_.href}
