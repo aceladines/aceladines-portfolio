@@ -37,10 +37,11 @@ export default async function Home() {
               </p>
               <p className="text-center text-sm leading-relaxed lg:text-xl">
                 <span className="font-bold text-blue-700">Hello World!</span>{" "}
-                This caffeine-fueled CS student is a full-stack developer in
-                training! Backends are my jam for now, but I&apos;m always
-                learning and expanding my skillset. Let&apos;s build something
-                awesome together!
+                swapped caffeine-fueled all-nighters for corporate coffee
+                breaks! Now crafting enterprise-level apps instead of just
+                homework. Always leveling up my skills with more resources and
+                fewer ramen noodles. Open to building something awesome with any
+                team—let's make it happen!
               </p>
             </div>
           </div>
@@ -121,6 +122,37 @@ export default async function Home() {
 
       <section id="education" className="h-fit mb-32">
         <h1 className="text-4xl font-bold mb-10">
+          Work Experience<span className="text-blue-700">.</span>
+        </h1>
+        <div className="grid gap-10 md:grid-cols-2">
+          <article className="flex gap-4 items-center">
+            <div className="relative w-36 aspect-square overflow-hidden">
+              <Image
+                src={"/ibm-logo.png"}
+                fill
+                style={{ objectFit: "contain" }}
+                sizes="(min-width: 768px) 300px, 100vw"
+                alt="ibm-logo"
+              />
+            </div>
+            <div className="flex flex-col w-full">
+              <h1 className="font-semibold text-md">Application Developer</h1>
+              <p className="text-sm font-medium text-gray-800">
+                Enterprise Applicaton Integration
+              </p>
+              <p className="text-sm font-medium text-gray-500">
+                2024 - Present
+              </p>
+              <p className="text-sm font-medium text-gray-700 mt-4">
+                IBM SOLUTIONS DELIVERY, INC.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="education" className="h-fit mb-32">
+        <h1 className="text-4xl font-bold mb-10">
           Education<span className="text-blue-700">.</span>
         </h1>
         <div className="grid gap-10 md:grid-cols-2">
@@ -136,9 +168,10 @@ export default async function Home() {
             </div>
             <div className="flex flex-col w-full">
               <h1 className="font-semibold text-md">BS. Computer Science</h1>
-              <p className="text-sm font-medium text-gray-500">
-                2020 - Present
+              <p className="text-sm font-medium text-gray-800">
+                Magna Cum Laude
               </p>
+              <p className="text-sm font-medium text-gray-500">2020 - 2024</p>
               <p className="text-sm font-medium text-gray-700 mt-4">
                 Pamantsan Ng Lungosd Ng Maynila
               </p>
@@ -158,6 +191,7 @@ export default async function Home() {
               <h1 className="font-semibold text-md">
                 Information Communication Technology
               </h1>
+              <p className="text-sm font-medium text-gray-800">With Honors</p>
               <p className="text-sm font-medium text-gray-500">2018 - 2020</p>
               <p className="text-sm font-medium text-gray-700 mt-4">
                 La Consolacion College Manila

@@ -5,11 +5,13 @@ import {
   SiNextdotjs,
   SiMongodb,
   SiTailwindcss,
+  SiDotnet,
 } from "react-icons/si";
 import { FaNodeJs, FaJava, FaGitAlt } from "react-icons/fa";
 import { BiLogoSpringBoot } from "react-icons/bi";
 import { TbFileTypeSql } from "react-icons/tb";
 import { MdDataObject } from "react-icons/md";
+import { PiFileCSharpFill } from "react-icons/pi";
 
 const skills = [
   {
@@ -28,6 +30,8 @@ const skills = [
     techImage: SiExpress,
     techName: "Express.js",
   },
+  { techImage: PiFileCSharpFill, techName: "C#" },
+  { techImage: SiDotnet, techName: ".Net Core" },
   {
     techImage: FaJava,
     techName: "Java",

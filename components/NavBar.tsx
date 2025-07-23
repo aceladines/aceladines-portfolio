@@ -35,12 +35,12 @@ export default function NavBar() {
   });
   return (
     <nav
-      className={`bg-white border-gray-200 dark:bg-gray-900 transition-opacity duration-700 ease-in-out sticky top-0 bg-white/15 backdrop-blur-sm w-full z-10 ${
+      className={`bg-white border-gray-200 transition-opacity duration-700 ease-in-out sticky top-0 backdrop-blur-sm w-full z-10 ${
         visible ? "opacity-100" : "opacity-0 -top-full"
       }`}
     >
       <div className="flex flex-wrap justify-between mx-auto w-[calc(100vw-6rem)] md:w-[calc(100vw-10rem)] lg:w-[calc(100vw-16rem)] py-4">
-        <h1 className="text-black text-xl dark:text-white font-semibold md:text-2xl uppercase tracking-tighter">
+        <h1 className="text-black text-xl font-semibold md:text-2xl uppercase tracking-tighter">
           ace.dev
         </h1>
 
