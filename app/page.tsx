@@ -37,11 +37,11 @@ export default async function Home() {
               </p>
               <p className="text-center text-sm leading-relaxed lg:text-xl">
                 <span className="font-bold text-blue-700">Hello World!</span>{" "}
-                swapped caffeine-fueled all-nighters for corporate coffee
+                Swapped caffeine-fueled all-nighters for corporate coffee
                 breaks! Now crafting enterprise-level apps instead of just
                 homework. Always leveling up my skills with more resources and
                 fewer ramen noodles. Open to building something awesome with any
-                team—let's make it happen!
+                team—let&apos;s make it happen!
               </p>
             </div>
           </div>
