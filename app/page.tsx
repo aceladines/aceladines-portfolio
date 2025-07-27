@@ -15,7 +15,7 @@ export default async function Home() {
     <div className="w-[calc(100vw-4rem)] mx-auto md:w-[90vw] lg:w-[900px]">
       <section
         id="home"
-        className="h-[calc(100vh-5rem)] min-h-[750px] md:min-h-[900px] mb-32"
+        className="h-[calc(100vh-5rem)] min-h-[850px] md:min-h-[1000px] mb-32 pt-48 md:pt-32"
       >
         <div className="flex flex-col justify-center h-full">
           <div className="flex flex-col items-center mb-10 lg:flex-row lg: gap-x-12">
