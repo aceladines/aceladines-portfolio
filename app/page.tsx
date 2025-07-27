@@ -120,7 +120,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <section id="education" className="h-fit mb-32">
+      <section id="experience" className="h-fit mb-32">
         <h1 className="text-4xl font-bold mb-10">
           Work Experience<span className="text-blue-700">.</span>
         </h1>
